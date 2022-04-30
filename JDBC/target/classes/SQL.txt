@@ -1,0 +1,15 @@
+新建数据表：
+CREATE TABLE `test`.`students` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sid` INT NULL,
+  `college` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `date` DATETIME NOT NULL,
+  `` VARCHAR(45) NULL,
+  UNIQUE INDEX `sid_UNIQUE` (`sid` ASC) VISIBLE)
+
+插入数据：
+  INSERT INTO `test`.`students` (`id`, `sid`, `college`, `name`, `date`) VALUES ('1', '2019121', '测绘', '高辉', '2021-6-30');
+  INSERT INTO `test`.`students` (`id`, `sid`, `college`, `name`, `date`) VALUES ('2', '2019124', '测绘', '韩铜', '2021-6-30');
+  INSERT INTO `test`.`students` (`id`, `sid`, `college`, `name`, `date`) VALUES ('3', '2020123', '电信', '牛马', '2024-6-30');
+  INSERT INTO `test`.`students` (`id`, `sid`, `college`, `name`, `date`) VALUES ('4', '2018312', '遥感', '撒库拉', '2019-4-30');
