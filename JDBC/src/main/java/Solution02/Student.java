@@ -1,6 +1,6 @@
 package Solution02;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * @Description: ResultSet的映射，数据类型和字段名应该和数据库字段对应
@@ -14,7 +14,7 @@ public class Student {
     private int sid;
     private String college;
     private String name;
-    private Date date;
+    private LocalDate date;
 
     public int getId() {
         return id;
@@ -48,11 +48,22 @@ public class Student {
         this.name = name;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", sid=" + sid +
+                ", college='" + college + '\'' +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                '}';
     }
 }

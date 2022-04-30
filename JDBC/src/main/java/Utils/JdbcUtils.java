@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -128,5 +130,45 @@ public class JdbcUtils {
             this.closeResource(connection, state, resultSet);
         }
         return null;
+    }
+
+    /**
+     *
+     * 采用泛型的方式，构建可查询不同表结构的通用查询操作，返回一系列查询结果
+     *
+     */
+    public <T> List<T> selectT(Connection conn, Class<T> clazz, String sql, Object... args) {
+        PreparedStatement state=null;
+        ResultSet result=null;
+
+        try {
+            state=conn.prepareStatement(sql);
+
+            for (int i = 0; i < args.length; i++) {
+                state.setObject(i+1,args[i]);
+            }
+            result = state.executeQuery();
+            ResultSetMetaData rsmd=result.getMetaData();
+
+            ArrayList<T> list=new ArrayList<>();
+            int columnCount=rsmd.getColumnCount();
+            while (result.next()){
+                T t= clazz.getDeclaredConstructor().newInstance();
+                for (int i = 0; i < columnCount; i++) {
+                    Object columnValue=result.getObject(i+1);
+                    String columnName=rsmd.getColumnLabel(i+1);
+                    Field field=clazz.getDeclaredField(columnName);
+                    field.setAccessible(true);
+                    field.set(t,columnValue);
+                }
+                list.add(t);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            this.closeResource(conn,state,result);
+        }
+        return  null;
     }
 }
