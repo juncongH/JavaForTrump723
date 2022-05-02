@@ -7,7 +7,7 @@
 <mapper namespace="helloMybatis.StudentDAO">
 
 <!--    写SQL语句，id对应方法名，resultType对应返回值-->
-    <select id="selectStudent" resultType="helloMybatis.Student">
+    <select id="selectStudent" resultType="Student">
         SELECT * FROM students
     </select>
 

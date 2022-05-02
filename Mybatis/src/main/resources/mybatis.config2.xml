@@ -8,7 +8,7 @@
     <properties resource="db.properties"/>
 
     <typeAliases>
-        <typeAlias type="helloMybatis.Student" alias="Student"/>
+        <typeAlias type="annotation.Student" alias="Student"/>
     </typeAliases>
 
     <environments default="development">
@@ -23,8 +23,8 @@
         </environment>
     </environments>
 
-<!--    在核心文件中注册-->
+<!--    绑定接口-->
     <mappers>
-        <mapper resource="helloMybatis/StudentMapper.xml"/>
+        <mapper class="annotation.StudentAnDAO"/>
     </mappers>
 </configuration>
