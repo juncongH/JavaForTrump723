@@ -7,6 +7,7 @@
 <!--    连接数据库-->
     <properties resource="db.properties"/>
 
+<!--    设置别名-->
     <typeAliases>
         <typeAlias type="annotation.Student" alias="Student"/>
     </typeAliases>

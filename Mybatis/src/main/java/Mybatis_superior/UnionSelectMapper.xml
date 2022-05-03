@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--collection结果-->
+<mapper namespace="Mybatis_superior.UnionSelectDAO">
+    <select id="selectStudentByLocated" parameterType="String" resultMap="CollegeResult">
+        select * from students as s left join college as c on s.college=c.name where c.located=#{located}
+    </select>
+    <resultMap id="CollegeResult" type="College">
+        <result property="name" column="name"/>
+        <result property="located" column="located"/>
+        <collection property="students" ofType="Student" javaType="List">
+            <result property="id" column="id"/>
+            <result property="sid" column="sid"/>
+            <result property="name" column="name"/>
+            <result property="date" column="date"/>
+        </collection>
+    </resultMap>
+
+<!--association结果-->
+    <select id="selectAllInfo" resultMap="StudentResult">
+        select * from students as s left join college as c on s.college=c.name
+    </select>
+    <resultMap id="StudentResult" type="Student">
+        <result property="id" column="id"/>
+        <result property="sid" column="sid"/>
+        <result property="name" column="name"/>
+        <result property="date" column="date"/>
+        <association property="college" javaType="College">
+            <result property="name" column="name"/>
+            <result property="located" column="located"/>
+        </association>
+    </resultMap>
+</mapper>

@@ -7,9 +7,9 @@
 <!--    连接数据库-->
     <properties resource="db.properties"/>
 
-<!--    设置别名-->
     <typeAliases>
-        <typeAlias type="annotation.Student" alias="Student"/>
+        <typeAlias type="Mybatis_superior.Student" alias="Student"/>
+        <typeAlias type="Mybatis_superior.College" alias="College"/>
     </typeAliases>
 
     <environments default="development">
@@ -24,8 +24,9 @@
         </environment>
     </environments>
 
-<!--    绑定接口-->
+<!--    在核心文件中注册-->
     <mappers>
-        <mapper class="annotation.StudentAnDAO"/>
+        <mapper resource="Mybatis_superior/UnionSelectMapper.xml"/>
+        <mapper resource="Mybatis_superior/dymSQLMapper.xml"/>
     </mappers>
 </configuration>
