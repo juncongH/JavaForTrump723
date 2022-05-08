@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="fact" class="Spring01.pojo.Factory">
+        <property name="FactoryName" value="tinging factory"/>
+    </bean>
+
+    <bean id="NiuMa" class="Spring01.pojo.NiuMa">
+        <property name="name" value="gaohui"/>
+        <property name="factory" ref="fact"/>
+        <property name="hobbies">
+            <list>
+                <value>上网</value>
+                <value>看片</value>
+            </list>
+        </property>
+        <property name="info">
+            <map>
+                <entry key="本科" value="whu"/>
+                <entry key="研究生" value="sgg"/>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>
