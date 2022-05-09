@@ -1,0 +1,21 @@
+<!--作用域与生命周期-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!--    &lt;!&ndash;默认是singleton&ndash;&gt;-->
+<!--    <bean id="student" class="Spring01.Student" scope="prototype">-->
+<!--        <property name="name" value="gaohui"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;prototype&ndash;&gt;-->
+<!--   <bean id="student" class="Spring01.Student" scope="prototype">-->
+<!--       <property name="name" value="gaohui"/>-->
+<!--   </bean>-->
+
+    <bean id="lifecycle" class="Spring01.LifeCycleBean"/>
+
+    <bean class="Spring01.PostProcessor"/>
+
+</beans>
