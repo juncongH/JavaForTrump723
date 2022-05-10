@@ -1,6 +1,7 @@
 package Spring06.Dao;
 
 import Spring06.Dao.OrderDao;
+import org.springframework.stereotype.Component;
 
 /**
  * @Description:
@@ -9,6 +10,7 @@ import Spring06.Dao.OrderDao;
  * @Package Spring06
  * @Date 2022/5/10 16:59
  */
+@Component(value = "orderDao")
 public class OrderDaoImpl implements OrderDao {
     @Override
     public void add() {
