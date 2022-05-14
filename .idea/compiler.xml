@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring" />
         <module name="JDBC" />
+        <module name="Spring" />
+        <module name="SpringMVC01" />
         <module name="Mybatis" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringMVC-01" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
