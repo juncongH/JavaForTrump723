@@ -13,6 +13,7 @@
         <module>Mybatis</module>
         <module>Spring</module>
         <module>SpringMVC01</module>
+        <module>SpringMVC02</module>
     </modules>
 
     <dependencies>

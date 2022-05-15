@@ -9,6 +9,7 @@
         <module name="JDBC" />
         <module name="Spring" />
         <module name="SpringMVC01" />
+        <module name="SpringMVC02" />
         <module name="Mybatis" />
       </profile>
     </annotationProcessing>
