@@ -1,4 +1,4 @@
-package com.BookSystem.dao;
+package com.BookSystem.pojo;
 
 /**
  * @ClassName Book
