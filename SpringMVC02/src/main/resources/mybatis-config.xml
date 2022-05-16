@@ -11,6 +11,6 @@
 
     <!--后面编写的Mapper配置文件需在此注册-->
     <mappers>
-        <mapper resource="com.BookSystem.dao.BookMapper"/>
+        <mapper resource="com/BookSystem/dao/BookMapper.xml"/>
     </mappers>
 </configuration>
